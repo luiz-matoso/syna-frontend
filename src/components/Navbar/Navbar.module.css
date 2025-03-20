@@ -1,0 +1,46 @@
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10%;
+  z-index: 2;
+  background-color: #222;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+  max-width: 100%;
+}
+
+.menu {
+  display: flex;
+}
+
+.menuItems {
+  display: flex;
+  gap: 46px;
+  list-style: none;
+  align-items: center;
+}
+
+.menuItems a {
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+}
+
+.button {
+  background-color: #007bff;
+  border: none;
+  padding: 4px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buttonLink {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
