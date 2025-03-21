@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 10%;
+  padding: 30px 10%;
   z-index: 2;
   background-color: #222;
 }
@@ -12,6 +12,12 @@
   width: 140px;
   height: auto;
   max-width: 100%;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
 }
 
 .menu {
@@ -23,6 +29,7 @@
   gap: 46px;
   list-style: none;
   align-items: center;
+  font-weight: 600;
 }
 
 .menuItems a {
@@ -32,15 +39,67 @@
 }
 
 .button {
-  background-color: #007bff;
+  background-color: #f87d37;
   border: none;
   padding: 4px 20px;
-  border-radius: 5px;
+  border-radius: 32px;
   cursor: pointer;
+  font-weight: 600;
+  transition: 1s;
+}
+
+.button:hover {
+  transform: scale(1.07);
 }
 
 .buttonLink {
   color: white;
   text-decoration: none;
   display: block;
+}
+
+.menuBtn {
+  display: none;
+}
+
+@media screen and (max-width: 830px) {
+  .navbar {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .menu {
+    position: absolute;
+    right: 0;
+    margin-right: 10%;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    z-index: 3;
+  }
+
+  .menuBtn {
+    display: block;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+
+  .menuItems {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background-color: #222;
+    padding: 24px 32px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    border-radius: 16px;
+  }
+
+  .menuOpen {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+  }
 }
