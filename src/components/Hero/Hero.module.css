@@ -1,0 +1,77 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 48px;
+  z-index: 1;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  z-index: 1;
+}
+
+.title {
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.description {
+  font-size: 30px;
+  margin-bottom: 52px;
+}
+
+.heroButton {
+  text-decoration: none;
+  background-color: #f87d37;
+  color: #222;
+  border-radius: 100px;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 16px 26px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  transition: 0.5s;
+}
+
+.heroButton:hover {
+  transform: scale(1.05);
+}
+
+.heroImage {
+  width: 50%;
+  z-index: 1;
+
+  animation-name: floating;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (max-witdh: 830px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+
+  .contet {
+    align-items: center;
+  }
+}
