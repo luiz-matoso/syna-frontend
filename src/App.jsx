@@ -8,12 +8,12 @@ function App() {
     <>
       <div className={styles.App}>
         <BrowserRouter>
-          <Navbar />
           <Routes>
             <Route
               path="/"
               element={
                 <>
+                  <Navbar />
                   <Hero />
                 </>
               }

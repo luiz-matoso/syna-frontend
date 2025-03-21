@@ -66,12 +66,12 @@
   }
 }
 
-@media screen and (max-witdh: 830px) {
+@media screen and (max-width: 830px) {
   .container {
     flex-direction: column-reverse;
   }
 
-  .contet {
+  .content {
     align-items: center;
   }
 }
