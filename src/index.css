@@ -7,6 +7,25 @@
   margin: 0;
   padding: 0;
   font-family: "Roboto Mono", monospace;
+  cursor: url("/arrow.cur"), auto;
+
+  p,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  input,
+  textarea {
+    cursor: url("/ibeam.cur"), text;
+  }
+
+  a,
+  button {
+    cursor: url("/hand.cur"), pointer;
+  }
 }
 
 html {
