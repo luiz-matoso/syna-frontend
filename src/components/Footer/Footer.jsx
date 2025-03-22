@@ -12,7 +12,7 @@ const Footer = () => {
         <p>Simplifying URL shortening for efficient sharing</p>
       </div>
 
-      <p className={styles.rights}>&copy; 2024 Syna. All rights reserved.</p>
+      <p className={styles.rights}>&copy; 2025 Syna. All rights reserved.</p>
 
       <ul className={styles.links}>
         <li className={styles.link}>
