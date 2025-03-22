@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import api from "../../api/api";
 import toast from "react-hot-toast";
 
-const Register = () => {
+const Login = () => {
   const navigate = useNavigate();
   const [loader, setLoader] = useState(false);
 
@@ -23,19 +23,19 @@ const Register = () => {
     mode: "onTouched",
   });
 
-  const registerHandler = async (data) => {
+  const loginHandler = async (data) => {
     setLoader(true);
     try {
-      const { data: response } = await api.post(
-        "/api/auth/public/register",
-        data
-      );
+      const { data: response } = await api.post("/api/auth/public/login", data);
+      console.log(response.token);
+      localStorage.setItem("JWT_TOKEN", JSON.stringify(response.token));
+      toast.success("Login Successful!");
+
       reset();
-      navigate("/login");
-      toast.success("Registration Successful!");
+      navigate("/");
     } catch (error) {
       console.log(error);
-      toast.error("Registration failed!");
+      toast.error("Login failed!");
     } finally {
       setLoader(false);
     }
@@ -43,8 +43,8 @@ const Register = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit(registerHandler)}>
-        <h1>Register Here</h1>
+      <form onSubmit={handleSubmit(loginHandler)}>
+        <h1>Login Here</h1>
 
         <div>
           <TextField
@@ -54,17 +54,6 @@ const Register = () => {
             type="text"
             message="*Username is required"
             placeholder="Type your username"
-            register={register}
-            errors={errors}
-          />
-
-          <TextField
-            label="Email"
-            required
-            id="email"
-            type="email"
-            message="*Email is required"
-            placeholder="Type your email"
             register={register}
             errors={errors}
           />
@@ -83,16 +72,16 @@ const Register = () => {
         </div>
 
         <button disabled={loader} type="submit">
-          {loader ? "Loading..." : "Register"}
+          {loader ? "Loading..." : "Login"}
         </button>
 
         <p>
-          Already have an account?
-          <Link to="/login">Login</Link>
+          Don't have an account?
+          <Link to="/register">Register</Link>
         </p>
       </form>
     </div>
   );
 };
 
-export default Register;
+export default Login;
