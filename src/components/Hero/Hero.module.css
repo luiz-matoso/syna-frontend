@@ -72,6 +72,11 @@
   }
 
   .content {
+    text-align: center;
     align-items: center;
+  }
+
+  .title {
+    text-align: center;
   }
 }

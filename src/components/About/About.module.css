@@ -81,6 +81,10 @@ p {
     flex-direction: column;
   }
 
+  .title {
+    text-align: center;
+  }
+
   .aboutImage {
     display: none;
   }
