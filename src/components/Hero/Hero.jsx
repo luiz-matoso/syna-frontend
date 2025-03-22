@@ -13,7 +13,7 @@ const Hero = () => {
           Shorten, share, and track your links effortlessly with Syna.
         </p>
         <a className={styles.heroButton} href="">
-          Start now
+          Manage Links
         </a>
       </div>
       <img src={heroImage} alt="Hero image" className={styles.heroImage} />
