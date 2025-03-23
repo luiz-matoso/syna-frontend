@@ -1,3 +1,5 @@
+import styles from "./TextField.module.css";
+
 const TextField = ({
   label,
   id,
@@ -11,7 +13,7 @@ const TextField = ({
   placeholder,
 }) => {
   return (
-    <div>
+    <div className={styles.input_box}>
       <label htmlFor={id}>{label}</label>
 
       <input

@@ -10,28 +10,28 @@ import Login from "./components/Login/Login";
 
 function App() {
   return (
-    <>
-      <div className={styles.App}>
-        <Router>
-          <Navbar />
-          <Toaster position="bottom-center" />
+    <div className={styles.App}>
+      <Router>
+        <Toaster position="bottom-center" />
+        <div className={styles["main-content"]}>
           <Routes>
             <Route
               path="/"
               element={
                 <>
+                  <Navbar />
                   <Hero />
                   <About />
+                  <Footer />
                 </>
               }
             />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
           </Routes>
-          <Footer />
-        </Router>
-      </div>
-    </>
+        </div>
+      </Router>
+    </div>
   );
 }
 

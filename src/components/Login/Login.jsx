@@ -6,6 +6,10 @@ import api from "../../api/api";
 import toast from "react-hot-toast";
 import { useStoreContext } from "../../contextApi/ContextApi";
 
+import logo from "../../assets/logo2.png";
+
+import styles from "./Login.module.css";
+
 const Login = () => {
   const navigate = useNavigate();
   const [loader, setLoader] = useState(false);
@@ -45,44 +49,57 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(loginHandler)}>
-        <h1>Login Here</h1>
+    <div className={styles.loginPage}>
+      <div className={styles.logoContainer}>
+        <Link to="/">
+          <img src={logo} alt="Logo" className={styles.logo} />
+        </Link>
+      </div>
+      <div className={styles.container}>
+        <form onSubmit={handleSubmit(loginHandler)}>
+          <h1 className={styles.title}>Log in and start sharing</h1>
 
-        <div>
-          <TextField
-            label="UserName"
-            required
-            id="username"
-            type="text"
-            message="*Username is required"
-            placeholder="Type your username"
-            register={register}
-            errors={errors}
-          />
+          <div>
+            <TextField
+              label="Username"
+              required
+              id="username"
+              type="text"
+              message="*Username is required"
+              placeholder="Type your username"
+              register={register}
+              errors={errors}
+            />
 
-          <TextField
-            label="Password"
-            required
-            id="password"
-            type="password"
-            message="*Password is required"
-            placeholder="Type your password"
-            register={register}
-            min={6}
-            errors={errors}
-          />
-        </div>
+            <TextField
+              label="Password"
+              required
+              id="password"
+              type="password"
+              message="*Password is required"
+              placeholder="Type your password"
+              register={register}
+              min={6}
+              errors={errors}
+            />
+          </div>
 
-        <button disabled={loader} type="submit">
-          {loader ? "Loading..." : "Login"}
-        </button>
+          <button
+            className={styles.loginButton}
+            disabled={loader}
+            type="submit"
+          >
+            {loader ? "Loading..." : "Login"}
+          </button>
 
-        <p>
-          Don't have an account?
-          <Link to="/register">Register</Link>
-        </p>
-      </form>
+          <p className={styles.noAccountText}>
+            Don't have an account?&nbsp;
+            <Link className={styles.link} to="/register">
+              Sign up
+            </Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 };

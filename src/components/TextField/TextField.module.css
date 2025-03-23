@@ -1,0 +1,37 @@
+.input_box {
+  position: relative;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input_box input {
+  width: 100%;
+  max-width: 350px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 0px;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+  background-color: #1c1c1d00;
+  color: white;
+  text-align: center;
+}
+
+.input_box label {
+  color: white;
+  margin-bottom: 12px;
+}
+
+.input_box input:focus {
+  border-color: #f87d37;
+}
+
+.input_box p {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}

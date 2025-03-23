@@ -1,0 +1,100 @@
+.container {
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(26, 26, 26, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #222;
+  padding: 20px;
+}
+
+.noAccountText {
+  color: white;
+  margin-top: 26px;
+  text-decoration: none;
+}
+
+.link {
+  text-decoration: underline;
+  color: #f87d37;
+  letter-spacing: -1px;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.loginButton {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #f87d37;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 32px;
+  cursor: url("/hand.cur"), pointer;
+}
+
+.loginButton:hover {
+  background-color: #b35824;
+}
+
+.logoContainer {
+  position: absolute;
+  top: 60px;
+  left: 80px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .loginButton {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .logoContainer {
+    top: 10%;
+    left: 34%;
+  }
+
+  .logo {
+    width: 160px;
+  }
+}
