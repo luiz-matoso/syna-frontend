@@ -47,12 +47,12 @@ const Register = () => {
 
   return (
     <div className={styles.registerPage}>
-      <div className={styles.logoContainer}>
-        <Link to="/">
-          <img src={logo} alt="Logo" className={styles.logo} />
-        </Link>
-      </div>
       <div className={styles.container}>
+        <div className={styles.logoContainer}>
+          <Link to="/">
+            <img src={logo} alt="Logo" className={styles.logo} />
+          </Link>
+        </div>
         <form onSubmit={handleSubmit(registerHandler)}>
           <h1 className={styles.title}>Create your account</h1>
 

@@ -59,9 +59,9 @@
 }
 
 .logoContainer {
-  position: absolute;
-  top: 60px;
-  left: 80px;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100%;
 }
 
 .logo {
@@ -78,6 +78,7 @@
 @media screen and (max-width: 830px) {
   .container {
     padding: 20px;
+    margin-top: 20px;
   }
 
   .title {
@@ -89,12 +90,11 @@
     padding: 8px;
   }
 
-  .logoContainer {
-    top: 10%;
-    left: 34%;
+  .logo {
+    width: 100px;
   }
 
-  .logo {
-    width: 160px;
+  .logoContainer {
+    margin-bottom: 20px;
   }
 }

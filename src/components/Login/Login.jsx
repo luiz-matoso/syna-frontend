@@ -50,12 +50,12 @@ const Login = () => {
 
   return (
     <div className={styles.loginPage}>
-      <div className={styles.logoContainer}>
-        <Link to="/">
-          <img src={logo} alt="Logo" className={styles.logo} />
-        </Link>
-      </div>
       <div className={styles.container}>
+        <div className={styles.logoContainer}>
+          <Link to="/">
+            <img src={logo} alt="Logo" className={styles.logo} />
+          </Link>
+        </div>
         <form onSubmit={handleSubmit(loginHandler)}>
           <h1 className={styles.title}>Log in and start sharing</h1>
 
