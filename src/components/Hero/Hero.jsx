@@ -16,9 +16,14 @@ const Hero = () => {
         <p className={styles.description}>
           Shorten, share, and track your links effortlessly with Syna.
         </p>
-        <a className={styles.heroButton} href="">
-          Manage Links
-        </a>
+        <div className={styles.buttonsContainer}>
+          <a className={styles.heroButton} href="">
+            Manage links
+          </a>
+          <a className={styles.heroButton2} href="">
+            Create short link
+          </a>
+        </div>
       </div>
       <img src={heroImage} alt="Hero image" className={styles.heroImage} />
     </section>
