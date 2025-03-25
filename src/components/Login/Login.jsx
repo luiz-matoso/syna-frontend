@@ -39,7 +39,7 @@ const Login = () => {
       toast.success("Login Successful!");
 
       reset();
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
       toast.error("Login failed!");
@@ -79,7 +79,6 @@ const Login = () => {
               message="*Password is required"
               placeholder="Type your password"
               register={register}
-              min={6}
               errors={errors}
             />
           </div>
