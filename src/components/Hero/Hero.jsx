@@ -7,7 +7,6 @@ import { useStoreContext } from "../../contextApi/ContextApi";
 
 const Hero = () => {
   const { token } = useStoreContext();
-  console.log("TOKEN FROM HERO PAGE: " + token);
 
   return (
     <section className={styles.container}>
