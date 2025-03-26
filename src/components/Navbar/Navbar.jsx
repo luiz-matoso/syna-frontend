@@ -13,7 +13,9 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <img className={styles.logo} src={logo} alt="" />
+      <a href="/">
+        <img className={styles.logo} src={logo} alt="" />
+      </a>
       <div className={styles.menu}>
         <img
           className={styles.menuBtn}
