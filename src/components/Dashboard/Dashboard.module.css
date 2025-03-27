@@ -69,4 +69,10 @@
   .statsContainer {
     grid-template-columns: 1fr;
   }
+
+  .createUrlContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
