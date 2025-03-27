@@ -5,13 +5,14 @@ import styles from "./About.module.css";
 import lightIcon from "../../assets/lightIcon.png";
 import sparklesIcon from "../../assets/sparklesIcon.png";
 import graphIcon from "../../assets/graphIcon.png";
+import aboutImage from "../../assets/aboutImage.png";
 
 const About = () => {
   return (
     <section className={styles.container} id="about">
       <h2 className={styles.title}>About</h2>
       <div className={styles.content}>
-        <img className={styles.aboutImage} src="" alt="About icon" />
+        <img className={styles.aboutImage} src={aboutImage} alt="About icon" />
         <ul className={styles.aboutItems}>
           <li className={styles.aboutItem}>
             <img src={lightIcon} alt="" />
