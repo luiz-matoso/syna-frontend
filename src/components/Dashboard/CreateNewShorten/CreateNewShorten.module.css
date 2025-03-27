@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(31, 31, 31);
+  border-radius: 12px;
+}
+
+.form {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-right: 70px;
+  padding-left: 70px;
+  border-radius: 8px;
+}
+
+.title {
+  color: white;
+  font-size: 26px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroButton {
+  margin-top: 20px;
+  color: white;
+  border: 0px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 80px;
+  background-color: #f87d37;
+}
+
+.closeButton {
+  position: absolute;
+  color: #f87d37;
+  background-color: rgb(31, 31, 31);
+  border: 0;
+  font-size: 28px;
+  right: 20px;
+  top: 20px;
+}

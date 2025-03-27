@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Graph from "./Graph";
 import { useFetchTotalClicks } from "../../hooks/useQuery";
 import { useStoreContext } from "../../contextApi/ContextApi";
 
 import styles from "./Dashboard.module.css";
+import ShortenPopUp from "./ShortenPopUp/ShortenPopUp";
 
 const Dashboard = () => {
+  const refetch = false;
   const { token } = useStoreContext();
+  const [shortenPopUp, setShortenPopUp] = useState(false);
 
   const onError = (error) => {
     console.error("Error:", error);
@@ -40,6 +43,21 @@ const Dashboard = () => {
           )}
         </div>
       </div>
+      <div className={styles.createUrlContainer}>
+        <button
+          className={styles.createUrlButton}
+          onClick={() => {
+            setShortenPopUp(true);
+          }}
+        >
+          Create a New Short URL
+        </button>
+      </div>
+      <ShortenPopUp
+        refetch={refetch}
+        open={shortenPopUp}
+        setOpen={setShortenPopUp}
+      />
     </div>
   );
 };
