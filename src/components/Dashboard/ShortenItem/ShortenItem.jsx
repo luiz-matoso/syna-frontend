@@ -11,6 +11,8 @@ import { FaExternalLinkAlt, FaRegCalendarAlt } from "react-icons/fa";
 import { MdAnalytics, MdOutlineAdsClick } from "react-icons/md";
 import api from "../../../api/api";
 import { useNavigate } from "react-router-dom";
+import { TailSpin } from "react-loader-spinner";
+import Graph from "../Graph";
 
 const ShortenItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
   const { token } = useStoreContext();
@@ -36,8 +38,20 @@ const ShortenItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
   const fetchMyShortUrl = async () => {
     setLoader(true);
     try {
+      const endDate = new Date();
+      const startDate = new Date();
+      startDate.setDate(endDate.getDate() - 30);
+
+      const formatDate = (date) => {
+        if (!(date instanceof Date) || isNaN(date)) {
+          throw new Error("Invalid data");
+        }
+        return date.toISOString().replace(/\.\d{3}Z$/, "");
+      };
       const response = await api.get(
-        "/api/urls/analytics/${selectedUrl}?startDate=2025-12-01T00:00:00&endDate=2025-12-31T23:59:59",
+        `/api/urls/analytics/${selectedUrl}?startDate=${formatDate(
+          startDate
+        )}&endDate=${formatDate(endDate)}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -48,7 +62,7 @@ const ShortenItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
       );
       setAnalyticsData(response.data);
       setSelectedUrl("");
-      console.log(response.data);
+      console.log("Dados recebidos:", response.data);
     } catch (error) {
       navigate("/error");
       console.log(error);
@@ -156,7 +170,33 @@ const ShortenItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
             analyticToggle ? styles.show : styles.hide
           }`}
         >
-          {loader ? <div></div> : <div></div>}
+          {loader ? (
+            <div className={styles.loaderContainer}>
+              <div className={styles.loaderContent}>
+                <TailSpin
+                  visible={true}
+                  height="50"
+                  width="50"
+                  color="#6c4ab6"
+                  ariaLabel="tail-spin-loading"
+                  radius="1"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+                <p className={styles.loadingText}>Please wait...</p>
+              </div>
+            </div>
+          ) : (
+            <>
+              {analyticsData.length === 0 ? (
+                <div className={styles.noDataMessage}>
+                  <p>No data found</p>
+                </div>
+              ) : (
+                <Graph graphData={analyticsData} />
+              )}
+            </>
+          )}
         </div>
       </React.Fragment>
     </div>
