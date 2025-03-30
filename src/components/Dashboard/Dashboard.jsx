@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import Graph from "./Graph";
-import { useFetchTotalClicks } from "../../hooks/useQuery";
+import { useFetchMyShortUrls, useFetchTotalClicks } from "../../hooks/useQuery";
 import { useStoreContext } from "../../contextApi/ContextApi";
+
+import { FaLink } from "react-icons/fa";
 
 import styles from "./Dashboard.module.css";
 import ShortenPopUp from "./ShortenPopUp/ShortenPopUp";
+import ShortenUrlList from "./ShortenUrlList/ShortenUrlList";
 
 const Dashboard = () => {
-  const refetch = false;
+  // const refetch = false;
   const { token } = useStoreContext();
   const [shortenPopUp, setShortenPopUp] = useState(false);
 
@@ -19,6 +22,14 @@ const Dashboard = () => {
     token,
     onError
   );
+
+  const {
+    data: myShortenUrls,
+    isLoading: isMyShortUrlsLoading,
+    isError: isMyShortUrlsError,
+    error: myShortUrlsError,
+    refetch,
+  } = useFetchMyShortUrls(token, onError);
 
   console.log({ isLoading, isError, data, error });
 
@@ -52,6 +63,20 @@ const Dashboard = () => {
         >
           Create a New Short URL
         </button>
+      </div>
+      <div>
+        {!isLoading && myShortenUrls.length === 0 ? (
+          <div className={styles.noLinkContainer}>
+            <div className={styles.noLink}>
+              <FaLink className={styles.linkIcon} />
+              <h1 className={styles.noLinkTitle}>
+                You haven't created any shorten url yet.
+              </h1>
+            </div>
+          </div>
+        ) : (
+          <ShortenUrlList data={myShortenUrls} />
+        )}
       </div>
       <ShortenPopUp
         refetch={refetch}

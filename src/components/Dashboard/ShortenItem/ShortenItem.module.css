@@ -1,0 +1,228 @@
+.cardContainer {
+  background-color: rgba(26, 26, 26, 0.6);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border: 1px dotted rgb(24, 24, 24);
+  padding: 24px;
+  border-radius: 6px;
+  margin-top: 12px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.headerContent {
+  color: #609dff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #609dff;
+}
+
+.urlContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.originalUrlContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.originalUrl {
+  font-size: 14px;
+  color: grey;
+  word-break: break-all;
+}
+
+.clicksContainer {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.clicksContent {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-weight: 600;
+  color: #ff9d65;
+}
+
+.clickIcon {
+  font-size: 22px;
+}
+
+.clickCount,
+.clickText {
+  font-size: 16px;
+}
+
+.dateContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
+}
+
+.dateText {
+  font-size: 16px;
+}
+
+.actionsContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.copyButton,
+.analyticsButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 24px;
+  font-weight: 600;
+  border-radius: 6px;
+  color: white;
+  white-space: nowrap;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.copyButton:hover,
+.analyticsButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.copyButton {
+  background-color: #f87d37;
+  cursor: url("/hand.cur"), pointer;
+}
+
+.analyticsButton {
+  background-color: #6c4ab6;
+  cursor: url("/hand.cur"), pointer;
+}
+
+.copied {
+  background-color: #f87d37;
+  border: 0px;
+  color: #222;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.analytics {
+  background-color: #6c4ab6;
+  border: 0px;
+  color: #222;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.actionIcon {
+  color: #222;
+  font-size: 18px;
+}
+
+.analyticsContainer {
+  max-height: 384px;
+  min-height: 384px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 830px) {
+  .cardContainer {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .headerContent {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .title {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .originalUrl {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .clicksContainer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+    margin: 12px auto;
+  }
+
+  .actionsContainer {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .copyButton,
+  .analyticsButton {
+    width: auto;
+    padding: 8px 24px;
+  }
+
+  .urlContainer {
+    align-items: center;
+  }
+
+  .clickIcon,
+  .calendarIcon {
+    margin: 0 auto;
+  }
+
+  .clickText,
+  .dateText {
+    text-align: center;
+  }
+
+  .analyticsContainer {
+    margin-top: 0;
+  }
+}

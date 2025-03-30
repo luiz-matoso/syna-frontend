@@ -10,14 +10,14 @@
 }
 
 .dashboardHeader h1 {
-  font-size: 2.2rem;
+  font-size: 36px;
   font-weight: 700;
   color: white;
   margin-bottom: 8px;
 }
 
 .dashboardHeader p {
-  font-size: 1rem;
+  font-size: 16px;
   color: rgb(131, 131, 131);
 }
 
@@ -42,11 +42,15 @@
   background-color: rgba(26, 26, 26, 0.6);
   border-radius: 8px;
   color: #666;
-  font-size: 1.2rem;
+  font-size: 18px;
 }
 
 .createUrlContainer {
-  margin-top: 60px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .createUrlButton {
@@ -61,9 +65,35 @@
   transition: 0.5s;
 }
 
+.noLinkContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 64px;
+}
+
+.noLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 20px;
+  background-color: rgba(26, 26, 26, 0.6);
+  border-radius: 20px;
+}
+
+.noLinkTitle {
+  font-size: 20px;
+  color: white;
+}
+
+.linkIcon {
+  font-size: 20px;
+  color: #f87d37;
+}
+
 @media (max-width: 830px) {
   .dashboardHeader h1 {
-    font-size: 1.8rem;
+    font-size: 28px;
   }
 
   .statsContainer {
