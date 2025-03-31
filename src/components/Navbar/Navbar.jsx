@@ -52,29 +52,27 @@ const Navbar = () => {
 
           {!token && location.pathname !== "/dashboard" && (
             <li>
-              <button className={styles.button}>
-                <Link to="/register" className={styles.buttonLink}>
-                  Sign Up
-                </Link>
-              </button>
+              <Link to="/register">
+                <button className={styles.button}>Sign Up</button>
+              </Link>
             </li>
           )}
 
           {token && location.pathname !== "/dashboard" && (
             <li>
-              <button className={styles.button}>
-                <Link to="/dashboard" className={styles.buttonLink}>
-                  Dashboard
-                </Link>
-              </button>
+              <Link to="/dashboard">
+                <button className={styles.button}>Dashboard</button>
+              </Link>
             </li>
           )}
 
           {token && location.pathname === "/dashboard" && (
             <li>
-              <button className={styles.logoutButton}>
-                <Link onClick={onLogoutHandler}>Log Out</Link>
-              </button>
+              <Link>
+                <button onClick={onLogoutHandler} className={styles.button}>
+                  Log Out
+                </button>
+              </Link>
             </li>
           )}
         </ul>
