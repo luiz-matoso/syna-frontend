@@ -10,6 +10,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 
 import styles from "./App.module.css";
 import { Route, Routes } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
 
 const AppRouter = () => {
   return (
@@ -29,14 +30,32 @@ const AppRouter = () => {
                 </>
               }
             />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
+
+            <Route
+              path="/register"
+              element={
+                <PrivateRoute publicPage={true}>
+                  <Register />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <PrivateRoute publicPage={true}>
+                  <Login />
+                </PrivateRoute>
+              }
+            />
+
             <Route
               path="/dashboard"
               element={
                 <>
-                  <Navbar />
-                  <Dashboard />
+                  <PrivateRoute publicPage={false}>
+                    <Navbar />
+                    <Dashboard />
+                  </PrivateRoute>
                 </>
               }
             />
