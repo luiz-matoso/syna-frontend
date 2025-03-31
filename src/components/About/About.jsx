@@ -32,7 +32,7 @@ const About = () => {
             <img src={graphIcon} alt="" />
             <div>
               <h3>Track Your Links</h3>
-              <p>Get insights and analytics on your links’ performance.</p>
+              <p>Get insights and analytics on your links performance.</p>
             </div>
           </li>
         </ul>
