@@ -12,7 +12,7 @@ import { MdAnalytics, MdOutlineAdsClick } from "react-icons/md";
 import api from "../../../api/api";
 import { useNavigate } from "react-router-dom";
 import { TailSpin } from "react-loader-spinner";
-import Graph from "../Graph";
+import Graph from "../Graph/Graph";
 
 const ShortenItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
   const { token } = useStoreContext();

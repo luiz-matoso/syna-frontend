@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Graph from "./Graph";
+import Graph from "./Graph/Graph";
 import { useFetchMyShortUrls, useFetchTotalClicks } from "../../hooks/useQuery";
 import { useStoreContext } from "../../contextApi/ContextApi";
 
