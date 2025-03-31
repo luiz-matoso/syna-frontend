@@ -2,21 +2,20 @@ import React, { useState } from "react";
 import Graph from "./Graph/Graph";
 import { useFetchMyShortUrls, useFetchTotalClicks } from "../../hooks/useQuery";
 import { useStoreContext } from "../../contextApi/ContextApi";
-
 import { FaLink } from "react-icons/fa";
-
 import styles from "./Dashboard.module.css";
 import ShortenPopUp from "./ShortenPopUp/ShortenPopUp";
 import ShortenUrlList from "./ShortenUrlList/ShortenUrlList";
+import Loader from "../Loader/Loader";
 
 const Dashboard = () => {
-  // const refetch = false;
   const { token } = useStoreContext();
   const [shortenPopUp, setShortenPopUp] = useState(false);
+  const [loader, setLoader] = useState(false);
 
-  const onError = (error) => {
-    console.error("Error:", error);
-  };
+  function onError() {
+    navigate("/error");
+  }
 
   const { data, isLoading, isError, error } = useFetchTotalClicks(
     token,
@@ -31,8 +30,6 @@ const Dashboard = () => {
     refetch,
   } = useFetchMyShortUrls(token, onError);
 
-  console.log({ isLoading, isError, data, error });
-
   const hasData = data && data.length > 0;
   const hasShortUrls = myShortenUrls?.length > 0;
 
@@ -42,44 +39,48 @@ const Dashboard = () => {
 
   return (
     <div className={styles.dashboardContainer}>
-      <header className={styles.dashboardHeader}>
-        <h1>Dashboard</h1>
-      </header>
-      <div className={styles.dashboardContent}>
-        <div className={styles.graphContainer}>
-          {hasData ? (
-            <Graph graphData={data} />
-          ) : (
-            <div className={styles.noDataMessage}>
-              <p>No data found</p>
-            </div>
-          )}
-        </div>
-      </div>
-      <div className={styles.createUrlContainer}>
-        <button
-          className={styles.createUrlButton}
-          onClick={() => {
-            setShortenPopUp(true);
-          }}
-        >
-          Create a New Short URL
-        </button>
-      </div>
-      <div>
-        {!isLoading && myShortenUrls.length === 0 ? (
-          <div className={styles.noLinkContainer}>
-            <div className={styles.noLink}>
-              <FaLink className={styles.linkIcon} />
-              <h1 className={styles.noLinkTitle}>
-                You haven't created any shorten url yet.
-              </h1>
+      {loader ? (
+        <Loader />
+      ) : (
+        <>
+          <header className={styles.dashboardHeader}>
+            <h1>Dashboard</h1>
+          </header>
+          <div className={styles.dashboardContent}>
+            <div className={styles.graphContainer}>
+              {hasData ? (
+                <Graph graphData={data} />
+              ) : (
+                <div className={styles.noDataMessage}>
+                  <p>No data found</p>
+                </div>
+              )}
             </div>
           </div>
-        ) : (
-          <ShortenUrlList data={myShortenUrls} />
-        )}
-      </div>
+          <div className={styles.createUrlContainer}>
+            <button
+              className={styles.createUrlButton}
+              onClick={() => setShortenPopUp(true)}
+            >
+              Create a New Short URL
+            </button>
+          </div>
+          <div>
+            {!isLoading && myShortenUrls.length === 0 ? (
+              <div className={styles.noLinkContainer}>
+                <div className={styles.noLink}>
+                  <FaLink className={styles.linkIcon} />
+                  <h1 className={styles.noLinkTitle}>
+                    You haven't created any shorten url yet.
+                  </h1>
+                </div>
+              </div>
+            ) : (
+              <ShortenUrlList data={myShortenUrls} />
+            )}
+          </div>
+        </>
+      )}
       <ShortenPopUp
         refetch={refetch}
         open={shortenPopUp}
