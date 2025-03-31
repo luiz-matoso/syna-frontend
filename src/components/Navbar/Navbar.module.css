@@ -51,14 +51,21 @@
   transform: scale(1.07);
 }
 
-.buttonLink {
-  color: white;
-  text-decoration: none;
-  display: block;
-}
-
 .menuBtn {
   display: none;
+}
+
+.logoutButton {
+  background-color: #f87d37;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 32px;
+  font-weight: 600;
+  transition: 1s;
+}
+
+.logoutButton:hover {
+  transform: scale(1.07);
 }
 
 @media screen and (max-width: 830px) {
