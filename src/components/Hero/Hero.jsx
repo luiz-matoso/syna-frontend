@@ -16,10 +16,10 @@ const Hero = () => {
           Shorten, share, and track your links effortlessly with Syna.
         </p>
         <div className={styles.buttonsContainer}>
-          <a className={styles.heroButton} href="">
+          <a className={styles.heroButton} href="/dashboard">
             Manage links
           </a>
-          <a className={styles.heroButton2} href="">
+          <a className={styles.heroButton2} href="/dashboard">
             Create short link
           </a>
         </div>
