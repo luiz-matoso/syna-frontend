@@ -11,6 +11,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import styles from "./App.module.css";
 import { Route, Routes } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
+import Error from "./components/Error/Error";
 
 const AppRouter = () => {
   return (
@@ -56,6 +57,24 @@ const AppRouter = () => {
                     <Navbar />
                     <Dashboard />
                   </PrivateRoute>
+                </>
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <>
+                  <Navbar />
+                  <Error message="We couldn't find the page you're looking for." />
+                </>
+              }
+            />
+            <Route
+              path="/error"
+              element={
+                <>
+                  <Navbar />
+                  <Error />
                 </>
               }
             />

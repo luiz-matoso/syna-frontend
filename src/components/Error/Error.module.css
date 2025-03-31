@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.title {
+  color: white;
+  font-size: 36px;
+}
+
+.subtitle {
+  margin-top: 6px;
+  color: grey;
+}
+
+.icon {
+  color: #f87d37;
+  font-size: 72px;
+  margin-bottom: 32px;
+}
+
+.icon2 {
+  font-size: 20px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 0;
+  background-color: #f87d37;
+  color: white;
+  font-size: 16px;
+  gap: 8px;
+}
+
+@media screen and (max-width: 830px) {
+  .title {
+    text-align: center;
+  }
+}
