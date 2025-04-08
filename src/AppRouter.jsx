@@ -12,6 +12,7 @@ import styles from "./App.module.css";
 import { Route, Routes } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import Error from "./components/Error/Error";
+import HowItWorks from "./components/HowItWorks/HowItWorks";
 
 const AppRouter = () => {
   return (
@@ -27,6 +28,7 @@ const AppRouter = () => {
                   <Navbar />
                   <Hero />
                   <About />
+                  <HowItWorks />
                   <Footer />
                 </>
               }

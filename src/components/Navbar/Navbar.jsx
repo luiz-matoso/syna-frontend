@@ -50,6 +50,12 @@ const Navbar = () => {
             </li>
           )}
 
+          {location.pathname !== "/dashboard" && (
+            <li>
+              <a href="#howitworks">How It Works</a>
+            </li>
+          )}
+
           {!token && location.pathname !== "/dashboard" && (
             <li>
               <Link to="/register">

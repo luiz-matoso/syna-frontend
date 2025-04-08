@@ -1,0 +1,106 @@
+.container {
+  background-color: #222;
+  border-radius: 20px;
+  padding: 72px;
+  margin-top: 128px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.title {
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: #ccc;
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 8px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex: 1;
+}
+
+.step {
+  background-color: rgba(19, 19, 19, 0.6);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+}
+
+.stepNumber {
+  font-size: 28px;
+  font-weight: bold;
+  background: #f87d37;
+  color: #111;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.step p {
+  margin: 4px 0 0;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.howImage {
+  width: 35%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 830px) {
+  .content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .howImage {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .header {
+    text-align: center;
+  }
+  .stepNumber {
+    padding: 24px;
+  }
+}
