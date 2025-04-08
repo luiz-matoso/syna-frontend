@@ -33,7 +33,7 @@ const Dashboard = () => {
   const hasData = data && data.length > 0;
   const hasShortUrls = myShortenUrls?.length > 0;
 
-  if (isLoading || isMyShortUrlsLoading) return <div>Loading...</div>;
+  // if (isLoading || isMyShortUrlsLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error.message}</div>;
   if (isMyShortUrlsError) return <div>Error: {myShortUrlsError.message}</div>;
 
