@@ -1,12 +1,71 @@
-# React + Vite
+# Syna - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 A modern and responsive URL shortener built with React.
 
-Currently, two official plugins are available:
+![Syna Banner](https://i.ibb.co/6cKpjdNL/logo-For-Readme.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Demo
 
-## Expanding the ESLint configuration
+![Syna Demo](https://s6.gifyu.com/images/bM5Gl.gif)
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Technologies
+
+- React JS
+- Vite
+- Axios
+- React Router DOM
+
+---
+
+## ✨ Features
+
+- Shorten any URL with one click
+- Redirect via custom short codes
+- User authentication with JWT
+- View personalized dashboard with shortened links
+- Responsive and user-friendly UI
+
+---
+
+## 🧑‍💻 Getting Started
+
+```bash
+# Clone this repository
+git clone https://github.com/luiz-matoso/syna-frontend.git
+
+# Navigate to the project folder
+cd syna-frontend
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+> Make sure your backend is running at `http://localhost:8080`.
+
+---
+
+## 📁 Project Structure
+
+```
+syna-frontend/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── App.jsx
+│   └── main.jsx
+├── public/
+├── index.html
+└── vite.config.js
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
